@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-//const cors = require('cors');
+const cors = require('cors');
 const env = require('dotenv').config();
 const { introspectionFromSchema } = require('graphql');
 const mongoose = require('mongoose');
@@ -40,8 +40,8 @@ const Factions = mongoose.model('factions', factionSchema);
 const app = express();
 const express_port = 30600;
 
-//app.use(cors());
-//app.options('*', cors());
+app.use(cors());
+app.options('*', cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -55,7 +55,7 @@ module.exports = app;
 app.use("/", router);
 
 router.route("/getData").get(function(req, res) {
-  Factions.find({ faction: 'Scholasticate' }, function(err, result) {
+  Factions.find({ faction: /^House / }, function(err, result) {
     if (err) {
       res.send(err);
     } else {

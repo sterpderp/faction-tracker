@@ -10,7 +10,13 @@ function App() {
     const response = await fetch(restEndpoint);
     let jsonResponse = await response.json();
     console.log(jsonResponse);
-    return jsonResponse[0]['theater'];
+    let result = [];
+    jsonResponse.forEach(item => {
+      result.push([[item['faction']],
+      [item['theater']],
+      [item['category']]]);
+    })
+    return (result);
   };
 
 function RenderResult() {
@@ -20,20 +26,28 @@ function RenderResult() {
         callRestApi().then(
             result => setApiResponse(result));
     },[]);
+    console.log(apiResponse);
     return apiResponse;
 };     
-    let apiResponse = RenderResult();
+   let apiResponse = RenderResult();
    // const theater = ('Theater: ' + jsonResponse.0.[0]);
-    return (
-      <div className='wrapper'>
-      <div className='theater'>
-        <h1>Theater: {apiResponse}</h1>
-        <div className='category'>
-          <h2>category</h2>
-            <div className='faction'>factionName</div>
-        </div>
-      </div>
-    </div>
+   while (apiResponse === '*** loading ***'){
+     continue;
+   }  
+   let boxRender =  apiResponse.forEach(item => {
+    <div className='wrapper'>;
+    <div className='theater'>;
+      <h1>Theater: {item[1]}</h1>;
+      <div className='category'>;
+        <h2>category: {item[2]}</h2>;
+          <div className='faction'>factionName {item[0]}</div>;
+      </div>;
+    </div>;
+  </div>;
+    })
+   
+   return (
+      boxRender
 );
 
 };

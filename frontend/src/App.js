@@ -2,6 +2,7 @@
 import './App.css';
 import React, { useState, useEffect }  from 'react';
 import apiCall from './api';
+import factionElement from './factionElement';
 //import ReactDOM from  'react-dom';
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
   };     
   
   let result = RenderResult();
-      
+  
   return (
     <div className='wrapper'>
       <div className='theater-wrapper'>
@@ -42,74 +43,10 @@ function App() {
         <div className='theater'>
           <div className='category'>
             <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-        </div>
-        <div className='theater-name'><h1>Theater: {result}</h1></div>
-        <div className='theater'>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-          </div>
-          <div className='category'>
-            <h2>category</h2>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
-              <div className='faction-box'>factionName</div>
+              {factionElement(null, 'House Fortemps', 'VI', 'S', '3', false, '')}
+              {factionElement(null, 'House Guerrique', 'VI', 'S', '3', false, '')}
+              {factionElement(null, 'House Hysode', 'VI', 'S', '3', false, '')}
+              {factionElement(null, 'House Dzemael', 'VI', 'S', '3', false, '')}
           </div>
         </div>
       </div>

@@ -37,11 +37,80 @@ function App() {
       
   return (
     <div className='wrapper'>
-      <div className='theater'>
-        <h1>Theater: {result}</h1>
-        <div className='category'>
-          <h2>category</h2>
-            <div className='faction'>factionName</div>
+      <div className='theater-wrapper'>
+      <div className='theater-name'><h1>Theater: {result}</h1></div>
+        <div className='theater'>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+        </div>
+        <div className='theater-name'><h1>Theater: {result}</h1></div>
+        <div className='theater'>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
+          <div className='category'>
+            <h2>category</h2>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+              <div className='faction-box'>factionName</div>
+          </div>
         </div>
       </div>
     </div>

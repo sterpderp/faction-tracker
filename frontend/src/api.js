@@ -7,14 +7,16 @@ const apiCall = async () => {
     console.log(jsonResponse);
     let apiResponse = [];
     
-    jsonResponse.forEach(element => {
-      for (const [key, value] of Object.entries(element)) {
-        if (String(key) !== '_id'){
-        apiResponse.push(JSON.stringify(value));
-      };}
-    });
-    console.log('API Response:' + apiResponse);
-    return apiResponse;
+    //jsonResponse.forEach(element => {
+    //  for (const [key, value] of Object.entries(element)) {
+    //    if (String(key) !== '_id'){
+    //    apiResponse.push(JSON.stringify(value));
+    //  };}
+    //});
+    //console.log('API Response:' + apiResponse);
+    //return apiResponse;
+
+    return String(jsonResponse[0]['theater']);
   };
 
 

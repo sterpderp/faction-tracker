@@ -1,5 +1,5 @@
 class Faction {
-    constructor(name, theater, category, tier, hold, rep, notes, is_player) {
+    constructor(name, theater, category, tier, hold, rep, notes) {
         this.name = name;
         this.theater = theater;
         this.category = category;
@@ -7,7 +7,7 @@ class Faction {
         this.hold = hold;
         this.rep = rep;
         this.notes = notes;
-        this.is_player = is_player;
+        //this.is_player = is_player;
     };
 };
 

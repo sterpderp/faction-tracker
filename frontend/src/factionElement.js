@@ -4,7 +4,7 @@ import apiCall from './api';
 import './App.css';
 //import ReactDOM from  'react-dom';
 
-function factionElement(props, fName, tier, hold, rep, player, notes) {
+function factionElement(fName, tier, hold, rep) {
     return (
       //<div class='faction-box'>
       //  <div class='faction-name'>{fName}</div>|
@@ -13,9 +13,9 @@ function factionElement(props, fName, tier, hold, rep, player, notes) {
       //</div>
 
     <div class='faction-box'>
-        <div align='left' class='faction-name'>{fName}</div>
-        <div align='right' class='faction-tier'>Tier {tier}{' '}{hold}</div>
-        <div align='right' class='faction-rep'>{rep}</div>
+        <div align='left' className='faction-name'>{fName}</div>
+        <div align='right' className='faction-tier'>Tier {tier}{' '}{hold}</div>
+        <div align='right' className='faction-rep'>{rep}</div>
     </div>
     );
 }

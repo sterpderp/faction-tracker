@@ -1,9 +1,8 @@
-// import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect }  from 'react';
 import apiCall from './api';
-import factionElement from './factionElement';
-import Faction from './classes/Faction';
+import factionTheater from './factionTheater';
+
 //import ReactDOM from  'react-dom';
 
 function App() {
@@ -19,23 +18,15 @@ function App() {
   };     
   
   let result = RenderResult();
+  console.log(result);
+  console.log(result.allFactions[0].name)
 
   // const testFaction = new Faction('ButtsName', 'ButtsTheater', 'ButtsCategory', 'ButtsTier', 'ButtsHold', 'ButtsRep', 'ButtsNotes', true);
   // {factionElement(null, testFaction.name, testFaction.tier, testFaction.hold, testFaction.rep, testFaction.is_player, testFaction.notes)}
-
+//{factionElement(null, result.allFactions[0].name, result.allFactions[0].tier, result.allFactions[0].hold, result.allFactions[0].rep, result.allFactions[0].notes)}
   return (
     <div className='wrapper'>
-      <div className='theater-wrapper'>
-      <div className='theater-name'><h1>:: Theater: Ishgard</h1></div>
-        <div className='theater'>
-          <div className='category'>
-            <h2>:: Underworld</h2>
-              {factionElement(null, 'Red Caps', 'II', 'W', '3', false, '')}
-              {factionElement(null, 'Steel and Spirit', 'I', 'W', '2', false, '')}
-              {factionElement(null, 'Knife\'s Edge', 'I', 'W', '3', false, '')}
-          </div>
-        </div>
-      </div>
+      {factionTheater(result)}
     </div>
   );
 

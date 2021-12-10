@@ -1,39 +1,45 @@
+import Faction from './classes/Faction';
+
 const restEndpoint = 'http://127.0.0.1:30600/getData';
+
 
 
 const apiCall = async () => {
     const response = await fetch(restEndpoint);
     let jsonResponse = await response.json();
-    console.log(jsonResponse);
     
     let allFactions = [];
-    
-    // List unique theaters
-    //jsonResponse.forEach(element => {
-    //  for (const [key, value] of Object.entries(element)) {
-    //    if (String(key) == 'theater'){
-    //    theaters.push(JSON.stringify(value));
-    //  };}
-    //});
-    //theaters = [...new Set(theaters)];
+    let theaters = [];
 
     for(var i = 0; i < jsonResponse.length; i++){
-        let oneFaction = [];    
-        oneFaction.push(String(jsonResponse[i]['faction']));
-        oneFaction.push(String(jsonResponse[i]['theater']));
-        oneFaction.push(String(jsonResponse[i]['category']));
-        oneFaction.push(String(jsonResponse[i]['tier']));
-        oneFaction.push(String(jsonResponse[i]['hold']));
-        oneFaction.push(String(jsonResponse[i]['rep']));
-        oneFaction.push(String(jsonResponse[i]['notes']));
-        oneFaction.push(String(jsonResponse[i]['is_player']));
-        allFactions.push(oneFaction);
-            
+        
+        const _Faction = new Faction(
+          String(jsonResponse[i]['faction']),
+          String(jsonResponse[i]['theater']),
+          String(jsonResponse[i]['category']),
+          String(jsonResponse[i]['tier']),
+          String(jsonResponse[i]['hold']),
+          String(jsonResponse[i]['rep']),
+          String(jsonResponse[i]['notes'])
+        );
+        allFactions.push(_Faction);
     };
-    console.log(allFactions)
-    return allFactions;
 
-    //return String(jsonResponse[0]['theater']);
+    // List unique theaters
+    allFactions.forEach(element => {
+      for (const [key, value] of Object.entries(element)) {
+        if (String(key) === 'theater'){
+        theaters.push(JSON.stringify(value));
+      };}
+    });
+    theaters = [...new Set(theaters)];
+
+    return {
+      allFactions,
+      theaters
+    };
+
+    
   };
 
 

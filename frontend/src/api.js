@@ -26,6 +26,7 @@ const apiCall = async () => {
         oneFaction.push(String(jsonResponse[i]['hold']));
         oneFaction.push(String(jsonResponse[i]['rep']));
         oneFaction.push(String(jsonResponse[i]['notes']));
+        oneFaction.push(String(jsonResponse[i]['is_player']));
         allFactions.push(oneFaction);
             
     };

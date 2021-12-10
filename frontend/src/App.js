@@ -3,26 +3,10 @@ import './App.css';
 import React, { useState, useEffect }  from 'react';
 import apiCall from './api';
 import factionElement from './factionElement';
+import Faction from './classes/Faction';
 //import ReactDOM from  'react-dom';
 
 function App() {
-//  const restEndpoint = 'http://127.0.0.1:30600/getData';
-//
-//  const callRestApi = async () => {
-//    const response = await fetch(restEndpoint);
-//   let jsonResponse = await response.json();
-//    console.log(jsonResponse);
-//    let apiResponse = [];
-//    
-//    jsonResponse.forEach(element => {
-//      for (const [key, value] of Object.entries(element)) {
-//        if (String(key) != '_id'){
-//        apiResponse.push(JSON.stringify(value));
-//      };}
-//    });
-//    console.log('API Response:' + apiResponse);
-//    return apiResponse;
-//  };
 
   function RenderResult() {
       const [formattedResponse, setApiResponse] = useState('*** loading ***');
@@ -35,18 +19,20 @@ function App() {
   };     
   
   let result = RenderResult();
-  
+
+  // const testFaction = new Faction('ButtsName', 'ButtsTheater', 'ButtsCategory', 'ButtsTier', 'ButtsHold', 'ButtsRep', 'ButtsNotes', true);
+  // {factionElement(null, testFaction.name, testFaction.tier, testFaction.hold, testFaction.rep, testFaction.is_player, testFaction.notes)}
+
   return (
     <div className='wrapper'>
       <div className='theater-wrapper'>
-      <div className='theater-name'><h1>Theater: {result}</h1></div>
+      <div className='theater-name'><h1>:: Theater: Ishgard</h1></div>
         <div className='theater'>
           <div className='category'>
-            <h2>category</h2>
-              {factionElement(null, 'House Fortemps', 'VI', 'S', '3', false, '')}
-              {factionElement(null, 'House Guerrique', 'VI', 'S', '3', false, '')}
-              {factionElement(null, 'House Hysode', 'VI', 'S', '3', false, '')}
-              {factionElement(null, 'House Dzemael', 'VI', 'S', '3', false, '')}
+            <h2>:: Underworld</h2>
+              {factionElement(null, 'Red Caps', 'II', 'W', '3', false, '')}
+              {factionElement(null, 'Steel and Spirit', 'I', 'W', '2', false, '')}
+              {factionElement(null, 'Knife\'s Edge', 'I', 'W', '3', false, '')}
           </div>
         </div>
       </div>

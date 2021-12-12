@@ -1,35 +1,30 @@
 import './App.css';
-import React, { useState, useEffect }  from 'react';
+import React from 'react';
 import apiCall from './api';
 import factionTheater from './factionTheater';
 
-//import ReactDOM from  'react-dom';
+class App extends React.Component {
 
-function App() {
+  state = {};
 
-  function RenderResult() {
-      const [formattedResponse, setApiResponse] = useState('*** loading ***');
-      
-      useEffect(() => {
-          apiCall().then(
-              result => setApiResponse(result));
-      },[]);
-      return formattedResponse;
-  };     
-  
-  let result = RenderResult();
-  console.log(result);
-  console.log(result.allFactions[0].name)
+  constructor(props) {
+    super(props)
+    apiCall().then(result =>
+      this.setState(result));
+  };
 
-  // const testFaction = new Faction('ButtsName', 'ButtsTheater', 'ButtsCategory', 'ButtsTier', 'ButtsHold', 'ButtsRep', 'ButtsNotes', true);
-  // {factionElement(null, testFaction.name, testFaction.tier, testFaction.hold, testFaction.rep, testFaction.is_player, testFaction.notes)}
-//{factionElement(null, result.allFactions[0].name, result.allFactions[0].tier, result.allFactions[0].hold, result.allFactions[0].rep, result.allFactions[0].notes)}
-  return (
-    <div className='wrapper'>
-      {factionTheater(result)}
-    </div>
-  );
-
-};
+  render() {
+    if (Object.keys(this.state).length === 0) {
+      return <div className='wrapper' style={{color: '#ffffff'}}>*** loading ***</div>
+    }else{
+    console.log(':::Retrieved '+Object.keys(this.state.allFactions).length+' records:::')
+    return (
+      <div className='wrapper'>
+        {factionTheater(this.state, this.state.theaters[1])}
+      </div>
+    )
+  }
+  };
+}
 
 export default App;

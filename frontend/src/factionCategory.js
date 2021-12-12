@@ -51,18 +51,3 @@ function factionCategory(factions, theater, category) {
 };
 
 export default buildCategories;
-
-//    {factionElement('Red Caps', 'II', 'W', '3')}
-//    {factionElement('Steel and Spirit', 'I', 'W', '2')}
-//   {factionElement('Knife\'s Edge', 'I', 'W', '3')}
-//    {factionElement(factions.allFactions[0].name, factions.allFactions[0].tier, factions.allFactions[0].hold, factions.allFactions[0].rep)}
-
-//let theaterBlock = [];
-//    for (let e = 0; e< theaters.length; ++e) {
-//      const t = new Theater()
-//      theaterBlock.push(t.factionTheater(this.state, theaters[e]));
-//    }   
-//    return theaterBlock;
-
-
-

@@ -13,6 +13,14 @@ class App extends React.Component {
       this.setState(result));
   };
 
+  buildTheaters(theaters) {
+    let theaterBlock = [];
+    for (let e = 0; e< theaters.length; ++e) {
+      theaterBlock.push(factionTheater(this.state, theaters[e]));
+    }   
+    return theaterBlock;
+  };
+
   render() {
     if (Object.keys(this.state).length === 0) {
       return <div className='wrapper' style={{color: '#ffffff'}}>*** loading ***</div>
@@ -20,7 +28,7 @@ class App extends React.Component {
     console.log(':::Retrieved '+Object.keys(this.state.allFactions).length+' records:::')
     return (
       <div className='wrapper'>
-        {factionTheater(this.state, this.state.theaters[1])}
+        {this.buildTheaters(this.state.theaters)}
       </div>
     )
   }

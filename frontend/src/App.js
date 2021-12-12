@@ -29,7 +29,7 @@ class App extends React.Component {
     }else{
     console.log(':::Retrieved '+Object.keys(this.state.allFactions).length+' records:::')
     return (
-      <div className='wrapper'>
+      <div className='wrapper' key='wrapper'>
         {this.buildTheaters(this.state.theaters)}
       </div>
     )

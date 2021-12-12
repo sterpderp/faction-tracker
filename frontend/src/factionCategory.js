@@ -29,21 +29,20 @@ function addElements(factions, theater, category){
             if (element.theater === theater.slice(1, -1) && 
                 element.category === category.slice(1, -1)) {
                     elementBlock.push(factionElement(
-                        (JSON.stringify(element.name)).slice(1, -1),
-                        (JSON.stringify(element.tier)).slice(1, -1),
-                        (JSON.stringify(element.hold)).slice(1, -1),
-                        (JSON.stringify(element.rep)).slice(1, -1)
+                        element.name,
+                        element.tier,
+                        element.hold,
+                        element.rep,
+                        element.key
                     ));
-                    console.log('element: '+elementBlock);
                 } 
-        
     });
     return elementBlock;
 };
 
 function factionCategory(factions, theater, category) {
     return(
-          <div className='category' key={theater.slice(1, -1)+'-'+category.slice(1, -1)}>
+          <div className='grid-item' key={theater.slice(1, -1)+'-'+category.slice(1, -1)}>
             <h2>:: {category.slice(1, -1)}</h2>
               {addElements(factions, theater, category)}
           </div>

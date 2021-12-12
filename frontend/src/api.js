@@ -20,7 +20,8 @@ const apiCall = async () => {
           String(jsonResponse[i]['tier']),
           String(jsonResponse[i]['hold']),
           String(jsonResponse[i]['rep']),
-          String(jsonResponse[i]['notes'])
+          String(jsonResponse[i]['notes']),
+          String(jsonResponse[i]['id'])
         );
         allFactions.push(_Faction);
     };

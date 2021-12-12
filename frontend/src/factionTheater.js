@@ -4,9 +4,6 @@ import React from 'react';
 import Masonry from "../node_modules/react-responsive-masonry"
 
 class Theater extends React.Component {
-  constructor(props) {
-    super(props)
-  };
 
   factionTheater(factions, theater) {
     let categories = [];  

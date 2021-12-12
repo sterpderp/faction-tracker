@@ -5,13 +5,10 @@ class Faction {
         this.category = category;
         this.tier = tier;
         this.hold = hold;
-        //this.rep = rep;
         this.notes = notes;
         this.id = id;
         this.divKey = id + '-key'
         
-        console.log(this.name+': '+rep)
-
         if (rep === 'undefined') {
             this.rep = 'X';
             this.is_player = true;

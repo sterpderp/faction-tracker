@@ -55,7 +55,7 @@ module.exports = app;
 app.use("/", router);
 
 router.route("/getData").get(function(req, res) {
-  Factions.find({ faction: / /}, function(err, result) {
+  Factions.find({}, function(err, result) {
     if (err) {
       res.send(err);
     } else {

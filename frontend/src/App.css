@@ -34,7 +34,7 @@ body{
     padding-left: auto;
     padding-right: auto;
     height: auto;
-    border: solid;
+    /* border: solid; */
     
     
 }
@@ -48,7 +48,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     border: solid;
-    border-color: #aaa;
+    border-color: #a8a8a8;
     border-radius: .5em;
     border-width: 2px;
     position: relative;

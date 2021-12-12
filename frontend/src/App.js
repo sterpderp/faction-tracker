@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import apiCall from './api';
-import factionTheater from './factionTheater';
+import Theater from './factionTheater';
 
 class App extends React.Component {
 
@@ -13,10 +13,12 @@ class App extends React.Component {
       this.setState(result));
   };
 
+  //build each theater block for render
   buildTheaters(theaters) {
     let theaterBlock = [];
     for (let e = 0; e< theaters.length; ++e) {
-      theaterBlock.push(factionTheater(this.state, theaters[e]));
+      const t = new Theater()
+      theaterBlock.push(t.factionTheater(this.state, theaters[e]));
     }   
     return theaterBlock;
   };

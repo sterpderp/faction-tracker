@@ -1,5 +1,7 @@
 import './App.css';
 import factionElement from './factionElement';
+import Example from './modal.js'
+
 
 function buildCategories(factions, theater, categories) {
     let categoryBlock = [];
@@ -43,8 +45,9 @@ function addElements(factions, theater, category){
 function factionCategory(factions, theater, category) {
     return(
           <div className='grid-item' key={theater.slice(1, -1)+'-'+category.slice(1, -1)}>
-            <h2>:: {category.slice(1, -1)}</h2>
+            <div className='category-head'><div className='category-name'>:: {category.slice(1, -1)}</div><div className='edit-button'><Example /></div></div>
               {addElements(factions, theater, category)}
+              
           </div>
     );
 };

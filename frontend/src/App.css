@@ -61,6 +61,25 @@ body{
             
 }
 
+.category-head {
+    display: grid;
+    grid-template-columns: 80% 20%
+}
+
+.category-name {
+    grid-column: 1;
+    justify-self: left;
+    align-self: end;
+    font-size: 1.75em;
+    font-weight: 500;
+}
+
+.edit-button {
+    grid-column: 2;
+    justify-self: right;
+    align-self: end;
+}
+
 .grid-item {
     border: solid;
     float: left;
@@ -111,22 +130,37 @@ body{
 
 .faction-name {
     font-weight: 600;
-    align-items: center;
+    align-self: center;
     position: relative;
 }
 
 .faction-tier {
     font-weight: 500;
     font-style: italic;
-    align-items: center;
+    align-self: center;
     position: relative;
 }
 
 .faction-rep {
     font-weight: 700;
     font-size: 1 rem;
-    align-items: center;
+    align-self: center;
     margin-left: .75rem;
     padding-right: .75rem;
     background-color: #ddf;
+}
+
+.btn {
+    background-color: rgba(68, 68, 102, 0);
+    border-style: none;
+}
+
+.btn:hover {
+    background-color: rgba(88, 88, 142, 0.8);
+}
+
+.btn:focus {
+    background-color: rgba(68, 68, 102, 0);
+    border-style: none;
+    box-shadow: 0 0 0 0.25rem rgba(68, 68, 102, 0);
 }
